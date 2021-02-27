@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1 Add Note:
+  p Click submit to save
+  form(action="/" method="POST")
+    input(name="noteTitle" type="text", placeholder="Title" requried)
+    input(name="noteBody" type="text", placeholder="Enter description")
+    button(type="submit" id="submit") Submit
+  if notes
+    h1 Notes: 
+    for note in notes 
+      div(class='row')
+        div(class='col-8')
+          div(class='card')
+            div(class='card-body')
+              div(class='card-title') #{note.title}
+               div(class='card-subtitle mb-2 text-muted') #{note.time}
+                p(class='card-text') #{note.text} 
