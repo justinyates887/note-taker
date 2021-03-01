@@ -4,16 +4,18 @@ block content
   h1 Add Note:
   p Click submit to save
   form(action="/" method="POST")
-    input(name="noteTitle" type="text", placeholder="Title" requried)
-    input(name="noteBody" type="text", placeholder="Enter description")
-    button(type="submit" id="submit") Submit
+    input(name="noteTitle" type="text", placeholder="Title" class="form-control mt-3" style="width: 20% " requried)
+    input(name="noteBody" type="text", placeholder="Enter description" class="form-control mt-3" style="width: 20%")
+    button(type="submit" id="submit" class="btn btn-primary mt-3") Submit
   if notes
     h1 Notes: 
     for note in notes 
-      div(class='row')
+      div(class='row text-center mt-1')
         div(class='col-8')
           div(class='card')
             div(class='card-body')
-              div(class='card-title') #{note.title}
-               div(class='card-subtitle mb-2 text-muted') #{note.time}
-                p(class='card-text') #{note.text} 
+              h5(class='card-title') #{note.title}
+              h6(class='card-subtitle mb-2 text-muted') #{note.time}
+              p(class='card-text') #{note.body}
+              form(action="/notes/delete")
+                button(type="submit" class="btn btn-danger") Delete

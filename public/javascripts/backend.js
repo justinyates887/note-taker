@@ -1,11 +1,11 @@
 const global = require('./notes.json');
 const controller = require('../../controllers/landing');
 
-function noteBuilder() {
+function noteBuilder(req) {
     const time = new Date();
     const note = {
-        title: controller.submit_note.req.body.noteTitle,
-        body: controller.submit_note.req.body.noteBody,
+        title: req.body.noteTitle,
+        body: req.body.noteBody,
         time: time
     }
     console.log(note);
@@ -13,4 +13,4 @@ function noteBuilder() {
     return note;
 }
 
-exports.noteBuilder() = noteBuilder();
+module.exports = noteBuilder;

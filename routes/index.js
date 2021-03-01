@@ -6,5 +6,6 @@ let landing = require('../controllers/landing')
 router.get('/', landing.get_landing);
 router.post('/', landing.submit_note);
 router.get('/notes', landing.show_notes);
+router.post('notes/delete', landing.delete_note)
 
 module.exports = router;
