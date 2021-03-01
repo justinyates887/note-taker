@@ -1,0 +1,14 @@
+extends layout 
+
+block content 
+ if notes
+    h1 Note: 
+    for note in notes 
+      div(class='row text-center mt-1')
+        div(class='col-8')
+          div(class='card')
+            div(class='card-body')
+              h5(class='card-title') #{note.title}
+              h6(class='card-subtitle mb-2 text-muted') #{note.time} + #{note.id}
+              p(class='card-text') #{note.body}
+              a(type="submit" class="btn btn-secondary" href="/note/" + note.id) View

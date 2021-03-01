@@ -1,0 +1,7 @@
+extends layout
+
+block content 
+    form(action="/" method="POST")
+        input(name="noteTitle" type="text", placeholder="Title" class="form-control mt-3" style="width: 20% " requried)
+        input(name="noteBody" type="text", placeholder="Enter description" class="form-control mt-3" style="width: 20%")
+        button(type="submit" id="submit" class="btn btn-primary mt-3") Submit

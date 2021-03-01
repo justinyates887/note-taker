@@ -1,16 +1,28 @@
 const global = require('./notes.json');
 const controller = require('../../controllers/landing');
+const notes = global.notesArr;
 
-function noteBuilder(req) {
+ exports.noteBuilder = function(req) {
     const time = new Date();
+    const id = Math.floor((Math.random() * 1000000) + 1);
     const note = {
         title: req.body.noteTitle,
         body: req.body.noteBody,
-        time: time
+        time: time,
+        id: id
     }
-    console.log(note);
-    global.notesArr.push(note);
+    notes.push(note);
     return note;
 }
 
-module.exports = noteBuilder;
+// exports.showNote = function(req) {
+//     let note = [];
+
+//     for(let i = 0; i < notes.length; i++){
+//         if(req.params.note_id == notes[i].id){
+//              note = notes[i];
+//         }
+//     }
+//     console.log(`Note: ${note}`)
+//     return note;
+// }

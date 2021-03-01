@@ -2,10 +2,9 @@ var express = require('express');
 var router = express.Router();
 let landing = require('../controllers/landing')
 
-/* GET home page. */
 router.get('/', landing.get_landing);
 router.post('/', landing.submit_note);
 router.get('/notes', landing.show_notes);
-router.post('notes/delete', landing.delete_note)
+router.get('note/:note_id', landing.show_note);
 
 module.exports = router;
