@@ -15,14 +15,14 @@ const notes = global.notesArr;
     return note;
 }
 
-// exports.showNote = function(req) {
-//     let note = [];
+exports.showNote = function(req) {
+    let note = [];
 
-//     for(let i = 0; i < notes.length; i++){
-//         if(req.params.note_id == notes[i].id){
-//              note = notes[i];
-//         }
-//     }
-//     console.log(`Note: ${note}`)
-//     return note;
-// }
+    for(let i = 0; i < notes.length; i++){
+        if(req.params.note_id == notes[i].id){
+             note.push(notes[i]);
+        }
+    }
+    console.log(`Note: ${note}`)
+    return note;
+}

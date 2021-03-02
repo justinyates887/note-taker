@@ -16,9 +16,10 @@ exports.show_notes = function (req, res, next){
 }
 
 exports.show_note = function (req, res, next){
-    let note = [];
-    for(let i = 0; i < notes.length; i++){
-        note = (req.param.note_id == notes[i].id) ? note.push(notes[i]) : ['oops']
-    }
+    // let note = [];
+    // for(let i = 0; i < notes.length; i++){
+    //     note = (req.param.note_id == notes[i].id) ? note.push(notes[i]) : ['oops']
+    // }
+    back.showNote(req);
     res.render('note', { note: note })
 }
