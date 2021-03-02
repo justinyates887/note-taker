@@ -2,6 +2,8 @@
 # Note Taker
 
 ![](https://img.shields.io/badge/No-License-red)
+[Deployed on Heroku](https://express-note-taker-justin.herokuapp.com/)
+[Demo](https://drive.google.com/file/d/1oGMGNBw7koMji3ZRernE3-zldIp5qDE4/view?usp=sharing)
 
 ### Table of Contents:
 - [Description](#description)
